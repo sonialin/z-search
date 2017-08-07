@@ -1,7 +1,7 @@
 <div class="container">
-  <% @tickets.each do |ticket| %>
+  <% @results.each do |result| %>
     <hr>
-      <% ticket.each do |key, value| %>
+      <% result.each do |key, value| %>
         <div class="row">
           <div class="col-md-2"><%= key %></div>
           <div class="col-md-10"><%= bold_matched_keyword(value, params[:search]) %></div>
