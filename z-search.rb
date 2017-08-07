@@ -51,7 +51,7 @@ def downcase_string_field(field)
   if field.is_a? String
     field.downcase
   else
-    field
+    field.to_s
   end
 end
 
