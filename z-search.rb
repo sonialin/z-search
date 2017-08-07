@@ -26,7 +26,11 @@ helpers do
 end
 
 def is_a_matching_field(field, keyword)
-  field.to_s.downcase == keyword.downcase
+  if field.is_a? Array
+    field.to_s.downcase.include? keyword.downcase
+  else
+    field.to_s.downcase == keyword.downcase
+  end
 end
 
 def data_path
