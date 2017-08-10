@@ -34,7 +34,11 @@ def is_a_matching_field(field, keyword)
 end
 
 def data_path
-  data_path = File.expand_path("../data", __FILE__)
+  if ENV['RACK-ENV'] == "test"
+    File.expand_path("../test/data",__FILE__)
+  else
+    File.expand_path("../data",__FILE__)
+  end
 end
 
 def parse_json(directory_path, filename)
